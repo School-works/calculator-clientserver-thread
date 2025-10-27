@@ -42,6 +42,10 @@ public class Main {
         @Override
         public void run() {
             try {
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+                String receivedString = in.readLine();
+                System.out.println(receivedString);
 
                 clientSocket.close();
                 System.out.println("Client disconnesso");
